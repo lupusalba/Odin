@@ -22,24 +22,40 @@ end
 print all_letters_capitalized(chars)
 
 
-
-def all_letters_ord_120(chars)
+def all_letters_capitalized_ord(chars)
+  chars.map {|string| string.upcase}
   tempo = chars.map {|letter| letter.ord}
   return tempo
 end
-print all_letters_ord_120(chars)
-
-print "\n\n\n"
-
-#first letter with ord > 120
-arr = all_letters_ord_120(chars)
+caps = all_letters_capitalized_ord(chars)
 for i in 0..25
-  if arr[i] > 120
-    print "#{arr[i].chr}\n"
+  if caps[i] > 72
+    print "\n#{caps[i].chr}"
   end
 end
 
 
+def all_letters_ord(chars)
+  tempo = chars.map {|letter| letter.ord}
+  return tempo
+end
+arr = all_letters_ord(chars)
+for i in 0..25
+  if arr[i] > 120
+    print "\n#{arr[i].chr}"
+  end
+end
+
+for i in 0..25
+  if caps[i].even
+    print "\n#{caps[i].chr}"
+  else if arr[i].even
+    print "\n#{caps[i].chr}"
+  end
+end
+
+print "\n\n\n"
+
+
+
 #all the letters whose capital is > 72
-
-
